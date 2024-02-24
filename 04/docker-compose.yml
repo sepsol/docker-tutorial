@@ -1,0 +1,12 @@
+version: "3.2"
+
+services:
+  backend:
+    image: sepsol/express:nodemon
+    pull_policy: build
+    build: .
+    container_name: back
+    ports:
+      - 4000:4000
+    volumes:
+      - ./src:/app/src

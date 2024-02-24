@@ -1,0 +1,24 @@
+version: "3.2"
+
+services:
+  db:
+    image: sepsol/database:postgres
+    pull_policy: build
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        POSTGRES_USER: ${POSTGRES_USER:-dockeruser}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+        POSTGRES_DB: ${POSTGRES_DB:-dockerdb}
+    container_name: pg
+    # https://www.postgresql.org/docs/current/libpq-envars.html
+    environment:
+      - PGHOSTADDR=127.0.0.1
+      - PGPORT=${PORT:-5432}
+      - PGUSER=${POSTGRES_USER:-dockeruser}
+      - PGPASSWORD=${POSTGRES_PASSWORD:-changeme}
+      #- PGPASSFILE=
+      - PGDATABASE=${POSTGRES_DB:-dockerdb}
+    ports:
+      - ${PORT:-5432}:${PORT:-5432}
