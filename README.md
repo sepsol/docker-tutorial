@@ -86,6 +86,8 @@ docker rm $CONTAINER_IDENTIFIER
 docker compose up
 # OR to override the default .env file with another one
 docker compose --env-file .development.env up
+# OR to run in the detached/daemon (background) mode
+docker compose up -d
 ```
 
 #### 3.2. List images
