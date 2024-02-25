@@ -90,24 +90,29 @@ docker compose --env-file .development.env up
 docker compose up -d
 ```
 
-#### 3.2. List images
+#### 3.2 View container logs
+```sh
+docker comopse logs
+```
+
+#### 3.3. List images
 ```sh
 docker compose images
 ```
 
-#### 3.3. List services
+#### 3.4. List services
 ```sh
 docker compose ls
 # OR to list stopped services as well
 docker compose ls -a
 ```
 
-#### 3.4. Stop resources
+#### 3.5. Stop resources
 ```sh
 docker compose down
 ```
 
-#### 3.5. Remove resources
+#### 3.6. Remove resources
 ```sh
 docker compose rm
 ```
