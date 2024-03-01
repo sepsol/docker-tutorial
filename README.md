@@ -110,6 +110,8 @@ docker compose ls -a
 #### 3.5. Stop resources
 ```sh
 docker compose down
+# OR to remove volumes as well
+docker compose down -v
 ```
 
 #### 3.6. Remove resources
