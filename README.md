@@ -133,12 +133,28 @@ docker exec -it $CONTAINER_IDENTIFIER sh
 docker exec -it $CONTAINER_IDENTIFIER psql
 ```
 
-#### List volumes
+#### Volumes
+
 ```sh
+# List volumes:
 docker volume ls
+
+# Inspect a volume:
+docker inspect $VOL
+
+# Remove a particular volume:
+docker volume rm $VOL1 $VOL2
+
+# Prune/remove all unused volumes:
+docker volume prune
 ```
 
-#### List networks
+#### Networks
+
 ```sh
+# List networks:
 docker network ls
+
+# Inspect a network:
+docker inspect $NET
 ```
