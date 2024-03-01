@@ -26,6 +26,10 @@ docker image ls
 #### 1.3. Removing
 ```sh
 docker rmi $IMAGE_IDENTIFIER
+# OR
+docker image rm $IMAGE_IDENTIFIER
+# OR to prune/remove unused images
+docker image prune
 ```
 
 Where `$IMAGE_IDENTIFIER` is either `Image ID` or image tag, i.e. `author/repo:tag`.
@@ -140,10 +144,10 @@ docker exec -it $CONTAINER_IDENTIFIER psql
 docker volume ls
 
 # Inspect a volume:
-docker inspect $VOL
+docker inspect $VOLUME_IDENTIFIER
 
 # Remove a particular volume:
-docker volume rm $VOL1 $VOL2
+docker volume rm $VOLUME_IDENTIFIER
 
 # Prune/remove all unused volumes:
 docker volume prune
@@ -156,5 +160,5 @@ docker volume prune
 docker network ls
 
 # Inspect a network:
-docker inspect $NET
+docker inspect $NETWORK_IDENTIFIER
 ```
