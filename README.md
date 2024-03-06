@@ -71,14 +71,14 @@ docker logs $CONTAINER_IDENTIFIER --follow
 docker logs $CONTAINER_IDENTIFIER -f
 ```
 
+Where `$CONTAINER_IDENTIFIER` is either `Container ID` or randomly generated container name, i.e. `scary_ship`.
+
 #### 2.4. Stopping
 Stopped containers are not entirely removed and they can be started again later, but their initialization commands are already executed.
 
 ```sh
 docker stop $CONTAINER_IDENTIFIER
 ```
-
-Where `$CONTAINER_IDENTIFIER` is either `Container ID` or randomly generated container name, i.e. `scary_ship`.
 
 #### 2.5. Starting
 Note that contrary to `docker run`, in this command you are NOT creating a _new_ image and that you are working with `$CONTAINER_IDENTIFIER` instead of `$IMAGE_IDENTIFIER`. Also note that `docker start` always starts the container in _detached_ mode.
