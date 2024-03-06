@@ -62,7 +62,16 @@ docker ps
 docker ps -a
 ```
 
-#### 2.3. Stopping
+#### 2.3. Viewing logs
+```sh
+docker logs $CONTAINER_IDENTIFIER
+# OR to follow logs
+docker logs $CONTAINER_IDENTIFIER --follow
+# OR for short
+docker logs $CONTAINER_IDENTIFIER -f
+```
+
+#### 2.4. Stopping
 Stopped containers are not entirely removed and they can be started again later, but their initialization commands are already executed.
 
 ```sh
@@ -71,14 +80,14 @@ docker stop $CONTAINER_IDENTIFIER
 
 Where `$CONTAINER_IDENTIFIER` is either `Container ID` or randomly generated container name, i.e. `scary_ship`.
 
-#### 2.4. Starting
+#### 2.5. Starting
 Note that contrary to `docker run`, in this command you are NOT creating a _new_ image and that you are working with `$CONTAINER_IDENTIFIER` instead of `$IMAGE_IDENTIFIER`. Also note that `docker start` always starts the container in _detached_ mode.
 
 ```sh
 docker start $CONTAINER_IDENTIFIER
 ```
 
-#### 2.5. Removing
+#### 2.6. Removing
 ```sh
 docker rm $CONTAINER_IDENTIFIER
 ```
@@ -97,6 +106,10 @@ docker compose up -d
 #### 3.2 View container logs
 ```sh
 docker comopse logs
+# OR to follow logs
+docker compose logs --follow
+# OR for short
+docker compose logs -f
 ```
 
 #### 3.3. List images
